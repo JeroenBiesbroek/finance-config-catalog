@@ -12,11 +12,19 @@ v1.0 — 2026-04-04
 
 ## Mapping Table
 
+<!-- CFG-004: Replace the entries below with actual Zoho Books customer_id and Exact Online debtor codes.
+     Instructions:
+     1. Export active customers from Zoho Books (Settings > Contacts > Export)
+     2. Export debtors from Exact Online (CRM > Accounts > Export)
+     3. Match by customer name
+     4. Fill in each row
+     5. Remove this comment block when done -->
+
 | Zoho Books customer_id | Zoho Books customer name | Exact Online debtor code | Exact Online debtor name | Status | Added date |
 |---|---|---|---|---|---|
-| _example_ | _Example Customer B.V._ | _10001_ | _Example Customer B.V._ | _Active_ | _2026-04-04_ |
+| <!-- REPLACE --> | <!-- REPLACE --> | <!-- REPLACE --> | <!-- REPLACE --> | Active | 2026-04-04 |
 
-> **Note:** Populate this table as customers are onboarded. Each entry requires Finance Lead sign-off.
+> **Action required:** Replace the placeholder row(s) above with actual customer-to-debtor mappings from your Zoho Books and Exact Online administrations. Each entry requires Finance Lead sign-off.
 
 ## Adding a New Debtor Mapping
 
