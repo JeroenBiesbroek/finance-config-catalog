@@ -1,7 +1,9 @@
-# Control Matrix — Finance Domain
+# Control Matrix — Finance Domain (Summary Register)
+
+> **Superseded by:** [FINANCE_CONTROL_MATRIX.md](FINANCE_CONTROL_MATRIX.md) — the full control matrix with objectives, evidence, exception handling, and remediation per control.
 
 ## Version
-v1.0 — 2026-04-04
+v1.0 — 2026-04-04 (superseded by v2.0)
 
 ## Control Register
 
@@ -47,6 +49,6 @@ v1.0 — 2026-04-04
 
 ## Maintenance
 
-This matrix is the authoritative register. It is maintained in `finance-config-catalog` and referenced by the control framework in `finance-product`.
+The authoritative register is now `FINANCE_CONTROL_MATRIX.md` in this directory. It is referenced by the control framework pointer in `finance-governance`.
 
 Changes follow the standard change process with Finance Lead approval.
