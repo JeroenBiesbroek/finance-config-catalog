@@ -1,0 +1,8 @@
+# Finance config — Finance Lead owns all config
+* @JeroenBiesbroek
+
+# Control matrix changes require Finance Lead
+/controls/ @JeroenBiesbroek
+
+# Mapping changes require Finance Lead
+/mappings/ @JeroenBiesbroek
