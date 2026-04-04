@@ -1,7 +1,7 @@
 # Debtor Mapping Rules — Zoho Books Customers to Exact Online Debtors
 
 ## Mapping Version
-v2.0 — 2026-04-04
+v2.1 — 2026-04-04
 
 ## Source Extract Date
 2026-04-04
@@ -13,7 +13,7 @@ v2.0 — 2026-04-04
 3. Mapping is by Zoho Books `customer_id` to Exact Online debtor code
 4. New mappings require Finance Lead approval
 
-## Mapping Table — Matched (23 customers)
+## Mapping Table — Matched (24 customers)
 
 | Zoho Books customer_id | Zoho Books customer name | Exact Online debtor code | Exact Online debtor name | Status | Reviewer notes | Added date |
 |---|---|---|---|---|---|---|
@@ -40,44 +40,49 @@ v2.0 — 2026-04-04
 | 716964000000064197 | Combinatie Dijkalliantie Neder-Betuwe v.o.f. | 412 | Combinatie Dijkalliantie Neder-Betuwe v.o.f. | Active | Exact match | 2026-04-04 |
 | 716964000000064181 | Koop Bronbemaling B.V. | 245 | Koop Bronbemaling B.V. | Active | Exact match | 2026-04-04 |
 | 716964000000064149 | GMB Civiel B.V. | 411 | GMB Civiel B.V. | Active | Exact match | 2026-04-04 |
+| 716964000000064133 | Van Gelder Groep B.V. | 244 | Van Gelder KLM | Active | Finance Lead confirmed: Van Gelder Groep B.V. = Van Gelder KLM. Approved 2026-04-04. | 2026-04-04 |
 
-## Mapping Table — Needs Review (1 customer)
+## Unmatched Customers (4 customers) — Action owner: thijs@powercrumbs.com
 
-| Zoho Books customer_id | Zoho Books customer name | Exact Online debtor code | Exact Online debtor name | Status | Reviewer notes | Added date |
-|---|---|---|---|---|---|---|
-| 716964000000064133 | Van Gelder Groep B.V. | 244 | Van Gelder KLM | Needs review | Name differs: "Van Gelder Groep B.V." vs "Van Gelder KLM". Finance Lead must confirm this is the correct debtor. | 2026-04-04 |
-
-## Unmatched Customers (5 customers)
+These customers need investigation and resolution in Exact Online before they can be mapped. Finance Lead has assigned this to Thijs.
 
 | Zoho Books customer_id | Zoho Books customer name | Zoho receivable | Unmatched reason | Required action |
 |---|---|---|---|---|
-| 716964000002209003 | Bouwhuis Aannemingsmaatschappij "Bouwmij" B.V. | €0,00 | No debtor found in Exact Online | Create debtor in Exact, then add mapping |
-| 716964000001962086 | AsfaltNu Amsterdam I | €86.394,00 | No exact match. AsfaltNu C.V. (410) exists but is mapped to separate Zoho entity. | Finance Lead: decide if this maps to 410 or needs new debtor. HIGH PRIORITY — has €86K receivable. |
-| 716964000001327555 | Critical Energy Services Europe B.V. | €0,00 | No debtor found in Exact Online | Create debtor in Exact, then add mapping. Low urgency — no receivable. |
-| 716964000000678065 | Renewable Energy Drilling B.V. | €0,00 | No debtor found in Exact Online | Create debtor in Exact, then add mapping. Low urgency — no receivable. |
-| 716964000000381003 | Test Klant Facturering | €0,00 | Test account | Exclude from mapping. Consider deactivating in Zoho Books. |
+| 716964000002209003 | Bouwhuis Aannemingsmaatschappij "Bouwmij" B.V. | €0,00 | No debtor found in Exact Online | Thijs: create debtor in Exact, then add mapping via PR |
+| 716964000001962086 | AsfaltNu Amsterdam I | €86.394,00 | No exact match. AsfaltNu C.V. (410) exists but is mapped to separate Zoho entity. | Thijs: decide if this maps to 410 or needs new debtor. HIGH PRIORITY — has €86K receivable. |
+| 716964000001327555 | Critical Energy Services Europe B.V. | €0,00 | No debtor found in Exact Online | Thijs: create debtor in Exact, then add mapping via PR. Low urgency. |
+| 716964000000678065 | Renewable Energy Drilling B.V. | €0,00 | No debtor found in Exact Online | Thijs: create debtor in Exact, then add mapping via PR. Low urgency. |
 
-## Duplicate Debtor Codes in Exact Online
+## Excluded Customers (1)
 
-The following Exact Online debtor names appear under multiple codes. The mapping uses the higher code (most recently created). Finance Lead should verify which code is the active debtor account and deactivate the other.
+| Zoho Books customer_id | Zoho Books customer name | Reason |
+|---|---|---|
+| 716964000000381003 | Test Klant Facturering | Test account. Not mapped. Consider deactivating in Zoho Books. |
 
-| Exact debtor name | Code used | Duplicate code | Action needed |
+## Duplicate Debtor Codes in Exact Online — Action owner: thijs@powercrumbs.com
+
+The following Exact Online debtor names appear under multiple codes. The mapping currently uses the higher code (most recently created). Thijs must verify which code is the active debtor account, confirm or update the mapping, and deactivate the unused code in Exact.
+
+| Exact debtor name | Code used in mapping | Duplicate code | Action needed |
 |---|---|---|---|
-| Hanab Energy Solutions B.V. | 417 | 404 | Verify active code, deactivate duplicate |
-| Koninklijke Van Twist B.V. | 424 | 222 | Verify active code, deactivate duplicate |
-| Bredenoord B.V. | 419 | 164 | Verify active code, deactivate duplicate |
+| Hanab Energy Solutions B.V. | 417 | 404 | Thijs: verify active code, deactivate duplicate, confirm mapping |
+| Koninklijke Van Twist B.V. | 424 | 222 | Thijs: verify active code, deactivate duplicate, confirm mapping |
+| Bredenoord B.V. | 419 | 164 | Thijs: verify active code, deactivate duplicate, confirm mapping |
 
 ## Validation Summary
 
 | Check | Result |
 |---|---|
 | Total Zoho Books active customers | 29 |
-| Matched to Exact debtor | 23 |
-| Needs review (name mismatch) | 1 |
-| Unmatched (no debtor in Exact) | 4 |
+| Matched to Exact debtor | 24 |
+| Needs review | 0 |
+| Unmatched (pending Thijs) | 4 |
 | Excluded (test account) | 1 |
 | Duplicate Zoho customer_id entries | 0 |
-| Duplicate Exact debtor code entries | 0 (duplicates documented separately) |
+| Duplicate Exact debtor code entries in mapping | 0 |
+| Duplicate debtor names in Exact (pending Thijs) | 3 |
+| Records requiring Finance Lead decision | 0 |
+| Records requiring Thijs action | 7 (4 unmatched + 3 duplicate verifications) |
 
 ## Adding a New Debtor Mapping
 
